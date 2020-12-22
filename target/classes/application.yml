@@ -1,0 +1,7 @@
+spring:
+  freemarker:
+    suffix: .ftl
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
