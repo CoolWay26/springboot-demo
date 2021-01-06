@@ -9,5 +9,4 @@ public class DemoQuartzTask1 {
     public void soutDate() {
         System.out.println("Quartz1:" + new Date());
     }
-
 }

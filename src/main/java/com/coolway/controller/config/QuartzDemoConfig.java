@@ -2,6 +2,7 @@ package com.coolway.controller.config;
 
 import com.coolway.controller.common.quartzjob.DemoQuartzTask2;
 import org.quartz.JobDataMap;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
@@ -10,6 +11,7 @@ import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 @Configuration
+@ConditionalOnExpression(value = "false")//控制quartz定时任务的开关
 public class QuartzDemoConfig {
     /**
      * MethodInvokingJobDetailFactoryBean
