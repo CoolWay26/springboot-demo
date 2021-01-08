@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coolway.mapper.student.StudentMapper">
+    <resultMap id="resultMap" type="com.coolway.mapper.student.StudentDO">
+        <result column="ID" property="id" jdbcType="VARCHAR"></result>
+        <result column="NAME" property="name" jdbcType="VARCHAR"></result>
+        <result column="AGE" property="age" jdbcType="INTEGER"></result>
+    </resultMap>
+    <select id="getAllStudent" resultMap="resultMap">
+        SELECT T.ID, T.NAME, T.AGE FROM STUDENT T
+    </select>
+</mapper>

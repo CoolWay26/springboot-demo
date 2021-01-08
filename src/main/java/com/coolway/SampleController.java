@@ -2,6 +2,7 @@ package com.coolway;
 
 import com.coolway.controller.common.quartzjob.DemoScheduledExecutorService;
 import com.coolway.controller.common.quartzjob.DemoTimerTask;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -6,6 +6,7 @@ import com.coolway.controller.common.quartzjob.DemoScheduledExecutorService;
 import com.coolway.controller.common.quartzjob.DemoTimerTask;
 import com.coolway.controller.common.utils.ExcelUtils;
 import com.coolway.service.thread.AsyncTaskTestService;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.LogManager;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,11 @@ import java.util.concurrent.TimeUnit;
 @Controller
 @RequestMapping("/example")
 public class ExampleController {
+
+    @Autowired
+    private AsyncTaskTestService asyncTaskTestService;
+
+
     protected Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     @GetMapping("/freemakerExample")
@@ -115,9 +122,6 @@ public class ExampleController {
         localTime.compareTo(localTime1);
     }
 
-    @Autowired
-    private AsyncTaskTestService asyncTaskTestService;
-
     @PostMapping("/asyncTest")
     @ApiOperation(value = "多线程测试")
     public void asyncTest() {
@@ -125,4 +129,17 @@ public class ExampleController {
             asyncTaskTestService.asyncTaskTest();
         }
     }
+
+    /**
+     * http测试
+     */
+    @PostMapping("/crosTest")
+    @ApiModelProperty(value = "http请求测试")
+    public void crosTest() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://192.168.31.206:8081/institutionCheck/doneForAbolish";
+        String response = restTemplate.postForObject(url, null, String.class);
+        System.out.println(response);
+    }
+
 }

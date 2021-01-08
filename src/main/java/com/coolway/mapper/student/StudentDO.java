@@ -1,14 +1,13 @@
-package com.coolway.entity;
+package com.coolway.mapper.student;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
 @NoArgsConstructor
-public class Student {
-
+public class StudentDO {
     String id;
 
     String name;
