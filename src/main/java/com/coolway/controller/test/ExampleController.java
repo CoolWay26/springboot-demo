@@ -8,6 +8,8 @@ import com.coolway.controller.common.utils.ExcelUtils;
 import com.coolway.service.thread.AsyncTaskTestService;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 
 import org.apache.logging.log4j.Logger;
@@ -31,13 +33,14 @@ import java.util.concurrent.TimeUnit;
 
 @Controller
 @RequestMapping("/example")
+@Slf4j
 public class ExampleController {
 
     @Autowired
     private AsyncTaskTestService asyncTaskTestService;
 
 
-    protected Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+//    private Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     @GetMapping("/freemakerExample")
     @ApiOperation(value = "freemaker测试", httpMethod = "GET", notes = "跳转到example.ftl")
@@ -63,12 +66,13 @@ public class ExampleController {
     @GetMapping("/log4j2Test")
     @ApiOperation(value = "log4j2测试")
     public void log4j2Test() {
-        logger.trace("trace111");
-        logger.debug("debug111");
-        logger.info("info111");
-        logger.warn("warn111");
-        logger.error("error111");
-        logger.fatal("fatal111");
+//        logger.trace("trace111");
+//        logger.debug("debug111");
+//        logger.info("info111");
+//        logger.warn("warn111");
+//        logger.error("error111");
+//        logger.fatal("fatal111");
+        log.info("info222");
     }
 
     /**
