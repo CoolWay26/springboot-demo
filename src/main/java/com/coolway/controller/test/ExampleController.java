@@ -2,20 +2,25 @@ package com.coolway.controller.test;
 
 
 import com.alibaba.excel.metadata.Sheet;
+import com.coolway.controller.common.ResponseResult;
+import com.coolway.controller.common.page.PageParam;
+import com.coolway.controller.common.page.PageService;
 import com.coolway.controller.common.quartzjob.DemoScheduledExecutorService;
 import com.coolway.controller.common.quartzjob.DemoTimerTask;
 import com.coolway.controller.common.utils.ExcelUtils;
+import com.coolway.mapper.student.StudentDO;
+import com.coolway.service.student.IStudentService;
 import com.coolway.service.thread.AsyncTaskTestService;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.LogManager;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
@@ -38,7 +43,8 @@ public class ExampleController {
 
     @Autowired
     private AsyncTaskTestService asyncTaskTestService;
-
+    @Autowired
+    private IStudentService studentService;
 
 //    private Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
@@ -144,6 +150,12 @@ public class ExampleController {
         String url = "http://192.168.31.206:8081/institutionCheck/doneForAbolish";
         String response = restTemplate.postForObject(url, null, String.class);
         System.out.println(response);
+    }
+
+    @GetMapping("/pageTest/page/{page}/size/{size}")
+    @ApiOperation(value = "分页查询测试")
+    public ResponseResult pageTest(PageParam<StudentDO> pageParam) {
+        return new ResponseResult().resultFlag(true).data(studentService.page(pageParam));
     }
 
 }
