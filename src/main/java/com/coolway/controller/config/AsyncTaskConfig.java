@@ -44,7 +44,7 @@ public class AsyncTaskConfig implements AsyncConfigurer {
      * 当线程池的线程数大于corePoolSize时，空闲线程会等待keepAliveTime长时间，如果无请求可处理就自行销毁
      */
     @Override
-    @Bean
+    @Bean(name = "taskExecutor")
     public Executor getAsyncExecutor() {
         ThreadPoolTaskExecutor threadPool = new ThreadPoolTaskExecutor();
         threadPool.setCorePoolSize(corePoolSize);

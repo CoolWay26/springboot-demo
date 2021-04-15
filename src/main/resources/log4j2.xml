@@ -42,8 +42,11 @@
             <AppenderRef ref="log"/>
         </Root>
         <!-- pattern layout actually uses location, so we need to include it -->
+<!--        <AsyncLogger name="com.coolway" level="info" includeLocation="true">-->
+<!--            <AppenderRef ref="infoLog"/>-->
+<!--        </AsyncLogger>-->
         <AsyncLogger name="com.coolway" level="info" includeLocation="true">
-            <AppenderRef ref="infoLog"/>
+            <AppenderRef ref="Console"/>
         </AsyncLogger>
         <!-- 第三方的软件日志级别 -->
         <!--        <logger name="org.springframework" level="info" additivity="true">-->
