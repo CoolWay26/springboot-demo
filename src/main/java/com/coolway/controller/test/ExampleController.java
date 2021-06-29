@@ -2,6 +2,7 @@ package com.coolway.controller.test;
 
 
 import com.alibaba.excel.metadata.Sheet;
+import com.coolway.annotation.RequiresLogin;
 import com.coolway.controller.common.ResponseResult;
 import com.coolway.controller.common.page.PageParam;
 import com.coolway.controller.common.quartzjob.DemoScheduledExecutorService;
@@ -374,6 +375,7 @@ public class ExampleController {
         return new ResponseResult().resultFlag(true);
     }
 
+    @RequiresLogin(loginName = "lisi")
     @PostMapping("/testLocalDateTime")
     @ApiOperation(value = "测试LocalDateTime")
     public void testLocalDateTime() {
