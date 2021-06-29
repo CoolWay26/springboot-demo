@@ -28,6 +28,7 @@ public class LoginAspect {
     //定义通知
     @Before("loginAspectPointcut()")
     public void beforeLogin(JoinPoint joinPoint) throws ClassNotFoundException {
+        System.out.println("开始访问，查看是否登录");
         //为方便阅读，变量的值注释在后面，不在上方注释
         String targetName1 = joinPoint.getTarget().getClass().getName();    //com.coolway.controller.test.ExampleController
         //通过切点方法获取信息
@@ -61,7 +62,6 @@ public class LoginAspect {
 
         Class class1 = Class.forName(targetName);
 
-        System.out.println("开始访问，查看是否登录");
     }
 
     @After("@annotation(com.coolway.annotation.RequiresLogin)")
