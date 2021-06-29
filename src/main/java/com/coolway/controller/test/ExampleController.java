@@ -26,9 +26,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -371,6 +372,122 @@ public class ExampleController {
 
         optional1.ifPresent(System.out::println);
         return new ResponseResult().resultFlag(true);
+    }
+
+    @PostMapping("/testLocalDateTime")
+    @ApiOperation(value = "测试LocalDateTime")
+    public void testLocalDateTime() {
+        //Mon Jul 25 00:00:00 CST 3921
+//        Date date = new Date(2021, 06, 25);
+//        System.out.println(date);
+        //LocalDate
+        //指定日期
+//        LocalDate localDate = LocalDate.of(2021, 6, 25);
+//        //当前日期
+//        LocalDate localDate1 = LocalDate.now();
+//        //获取年月日
+//        int year = localDate.getYear();
+//        //月份是枚举类型
+//        int month1 = localDate.getMonth().getValue();
+//        int month2 = localDate.getMonthValue();
+//        //周几是枚举类型，周几就对应几，如周一，则value为1，周日value为7
+//        int dayOfWeek1 = localDate.getDayOfWeek().getValue();
+//        System.out.println(dayOfWeek1);
+//        //几日是int类型
+//        int dayOfMonth1 = localDate.getDayOfMonth();
+//        int dayOfYear1 = localDate.getDayOfYear();
+//        System.out.println(localDate);
+
+        //LocalTime
+//        //创建
+//        LocalTime localTime = LocalTime.of(11, 39, 31,111111111);
+//        System.out.println(localTime);
+//        LocalTime localTime1 = LocalTime.now();
+//        System.out.println(localTime1);
+//        //获取
+//        localTime.getHour();
+//        localTime.getMinute();
+//        localTime.getMinute();
+//        localTime.getNano();
+
+        //LocalDateTime
+//        //创建
+//        LocalDateTime localDateTime = LocalDateTime.of(2021, 6, 25, 13, 48, 1,
+//                11111);
+//        LocalDateTime localDateTime1 = LocalDateTime.now();
+//        //获取
+//        localDateTime.getYear();
+//
+//        //修改
+//        //直接修改为指定值
+//        LocalDateTime localDateTime2 = localDateTime.withYear(2022);
+//        localDateTime.withDayOfMonth(26);
+//        localDateTime.withDayOfYear(200);
+//        //加减
+//        LocalDateTime localDateTime3 = localDateTime.plusYears(1);
+//        LocalDateTime localDateTime4 = localDateTime.minusYears(1);
+//
+//        //比较
+//        boolean after = localDateTime.isAfter(localDateTime1);
+//        boolean before = localDateTime.isBefore(localDateTime1);
+//        boolean equal = localDateTime.isEqual(localDateTime1);
+//
+//        DateTimeFormatter
+//        //格式化
+//        //指定格式
+//        //系统预定义格式
+//        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+//        //自定义格式
+//        DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        //日期时间转为字符串
+//        String format1 = localDateTime1.format(dateTimeFormatter);
+//        String format2 = localDateTime1.format(dateTimeFormatter1);
+//        System.out.println(format1);
+//        System.out.println(format2);
+//        //字符串转时间日期
+//        LocalDateTime parseLocalDateTime = LocalDateTime.parse("2021-6-25 18:34:00", dateTimeFormatter1);
+
+//        Instant
+//        Instant instant = Instant.now();
+//        System.out.println(instant.getNano());
+
+//        Duration
+//        LocalTime localTime1 = LocalTime.now();
+//        LocalTime localTime2 = LocalTime.of(11, 0, 0);
+//        Duration duration = Duration.between(localTime1, localTime2);
+////        localTime2-localTime1
+//        System.out.println(duration.toHours());
+//        System.out.println(duration.toMinutes());
+//        System.out.println(duration.toMillis());
+//        System.out.println(duration.toNanos());
+//        Period
+//        LocalDate localDate1 = LocalDate.now();
+//        LocalDate localDate2 = LocalDate.of(2020, 1, 1);
+//        Period period = Period.between(localDate2, localDate1);
+//        period.getYears();
+//        period.getMonths();
+//        period.getDays();
+        //时间校正器
+//        TemporalAdjuster adjuster = (temporal) -> {
+//            LocalDateTime localDateTime1 = (LocalDateTime) temporal;
+//            LocalDateTime localDateTime2 = localDateTime1.plusMonths(1).withDayOfMonth(1);
+//            return localDateTime2;
+//        };
+//
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        LocalDateTime localDateTime1 = localDateTime.with(adjuster);
+//        LocalDateTime localDateTime2 = localDateTime.with(TemporalAdjusters.firstDayOfNextMonth());
+        //时区
+        //获取所有时区ID
+        ZoneId.getAvailableZoneIds();
+        //获取当前时间，东八区，比格林尼治时间早8h
+        LocalDateTime localDateTime = LocalDateTime.now();
+        //标准时间
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(Clock.systemUTC());
+        //系统默认时区
+        ZonedDateTime zonedDateTime1 = ZonedDateTime.now();
+        //指定时区
+        ZonedDateTime zonedDateTime2 = ZonedDateTime.now(ZoneId.of("America/Marigot"));
     }
 
     private void testPredicate(Predicate<String> predicate1, Predicate<String> predicate2, String str) {
