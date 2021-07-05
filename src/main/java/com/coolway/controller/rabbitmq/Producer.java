@@ -1,4 +1,4 @@
-package com.coolway.controller.rabbitmq.simple;
+package com.coolway.controller.rabbitmq;
 
 import com.coolway.controller.common.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
