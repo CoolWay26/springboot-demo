@@ -11,7 +11,7 @@ public class RabbitMQUtil {
     private final static int port = 5672;
     private final static String username = "admin";
     private final static String password = "123456";
-    private final static String virtualHost = "host.test1";
+    private final static String virtualHost = "hostTest";
 
     public static Connection getConnection() throws IOException, TimeoutException {
         //创建连接工厂
