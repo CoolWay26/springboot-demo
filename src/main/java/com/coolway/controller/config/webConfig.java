@@ -49,22 +49,4 @@ public class webConfig {
 //    public class MyListener extends SessionListener {
 //        //...
 //    }
-
-
-    /**
-     * context-param
-     *
-     * @return
-     */
-    @Bean
-    public ServletContextInitializer initializer() {
-        return new ServletContextInitializer() {
-            @Override
-            public void onStartup(ServletContext servletContext) throws ServletException {
-                servletContext.setInitParameter("org.apache.activemq.embeddedBroker", "true");
-                servletContext.setInitParameter("name", "zhangsanContext");
-                //servletContext.setAttribute(WebClient.CONNECTION_FACTORY_ATTRIBUTE, ((JmsPoolConnectionFactory) applicationContext.getBean(JmsPoolConnectionFactory.class)).getConnectionFactory());
-            }
-        };
-    }
 }
