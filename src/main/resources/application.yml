@@ -63,6 +63,19 @@ spring:
           enabled: true
       #是否合并多个DruidDataSource的监控数据
       useGlobalDataSourceStat:  true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: 1234
+    jedis:
+      pool:
+        max-active: 1024
+        max-wait: 10000
+        max-idle: 200
+        min-idle: 0
+    timeout: 10000
+    block-when-exhausted: true
 druidWebStatFilter:
   enabled:  true
 
@@ -73,4 +86,24 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+#redis
 
+
+#test
+#一般数据
+test:
+  testname1: zhangsan
+  testname2: "zhang\nsan"
+  testname3: 'zhang\nsan'
+  #对象
+  student:
+    name: zhangsan
+    age: 20
+  #数组
+  studentList:
+      - name: zhangsan
+        age: 20
+      - name: lisi
+        age: 21
+      - name: wangwu
+        age: 22

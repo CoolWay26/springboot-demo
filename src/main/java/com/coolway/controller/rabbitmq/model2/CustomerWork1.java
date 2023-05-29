@@ -1,4 +1,4 @@
-package com.coolway.controller.rabbitmq;
+package com.coolway.controller.rabbitmq.model2;
 
 import com.coolway.controller.common.utils.RabbitMQUtil;
 import com.rabbitmq.client.*;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class CustomerWork1 {
-    private final static String QUEUE_NAME = "queues.test1";
+    private final static String QUEUE_NAME = "queues.work";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         //创建一个新的连接
@@ -32,20 +32,13 @@ public class CustomerWork1 {
                     throws IOException {
                 String message = new String(body, "UTF-8");
                 System.out.println("Customer Received '" + message + "'");
-
-                /*
-                 * deliveryTag:用来标识消息的id
-                 * multiple：是否批量.true:将一次性ack所有小于deliveryTag的消息
-                 */
-                channel.basicAck(envelope.getDeliveryTag(), false);
-
             }
         };
         //监听队列
         //第一个参数，指定要监听的队列
         //第二个参数，是否自动回复，ACK机制
         //第三个参数，通过入参consumer执行回调函数handleDelivery(..)
-        channel.basicConsume(QUEUE_NAME, false, consumer);
+        channel.basicConsume(QUEUE_NAME, true, consumer);
 
         //消费者不会关闭资源，需要一直监听队列
     }

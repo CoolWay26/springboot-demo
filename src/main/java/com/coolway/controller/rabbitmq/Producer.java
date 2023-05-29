@@ -25,14 +25,16 @@ public class Producer {
         // 第四个参数为是否自动删除队列（当所有消费者customer客户端连接断开时）
         // 第五个参数为队列的其他参数
         channel.queueDeclare(QUEUE_NAME, true, false, false, null);
-        String message = "Hello RabbitMQ";
-        //发送消息到队列中basicPublish()
-        // 第一个参数为交换机名称
-        // 第二个参数为队列名称
-        // 第三个参数为消息的其他属性
-        // 第四个参数为发送信息的主体（字节格式）
-        channel.basicPublish("", QUEUE_NAME, null, message.getBytes("UTF-8"));
-        //释放资源（关闭通道和连接）
+        for (int i = 0; i < 10; i++) {
+            String message = "Hello RabbitMQ";
+            //发送消息到队列中basicPublish()
+            // 第一个参数为交换机名称
+            // 第二个参数为队列名称
+            // 第三个参数为消息的其他属性
+            // 第四个参数为发送信息的主体（字节格式）
+            channel.basicPublish("", QUEUE_NAME, null, message.getBytes("UTF-8"));
+            //释放资源（关闭通道和连接）
+        }
         channel.close();
         connection.close();
     }
