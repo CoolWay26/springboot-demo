@@ -10,8 +10,8 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
-//@PropertySource(value = {"classpath:redis.properties"})
-@ConfigurationProperties(prefix = "spring.redis")
+@PropertySource(value = {"classpath:redis.properties"})
+//@ConfigurationProperties(prefix = "spring.redis")
 @Slf4j
 public class RedisConfig {
 

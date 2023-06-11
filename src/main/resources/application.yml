@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   freemarker:
     suffix: .ftl
@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url:  jdbc:mysql://localhost:3306/datatest?characterEncoding=utf8&serverTimezone=UTC
-    username: coolway
+    username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
     #druid连接池补充配置
@@ -86,24 +86,7 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-#redis
-
-
-#test
-#一般数据
 test:
   testname1: zhangsan
-  testname2: "zhang\nsan"
-  testname3: 'zhang\nsan'
-  #对象
-  student:
-    name: zhangsan
-    age: 20
-  #数组
-  studentList:
-      - name: zhangsan
-        age: 20
-      - name: lisi
-        age: 21
-      - name: wangwu
-        age: 22
+  testname2: lisi
+  testname3: wangwu
