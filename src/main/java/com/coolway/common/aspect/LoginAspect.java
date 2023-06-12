@@ -1,4 +1,4 @@
-package com.coolway.controller.common.aspect;
+package com.coolway.common.aspect;
 
 import com.coolway.annotation.RequiresLogin;
 import org.apache.commons.lang3.ArrayUtils;

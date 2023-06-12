@@ -1,4 +1,4 @@
-package com.coolway.controller.common.utils;
+package com.coolway.common.utils;
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;

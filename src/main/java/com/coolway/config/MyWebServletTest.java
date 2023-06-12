@@ -1,4 +1,4 @@
-package com.coolway.controller.config;
+package com.coolway.config;
 
 
 import javax.servlet.*;

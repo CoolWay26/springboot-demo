@@ -1,7 +1,7 @@
 package com.coolway.controller.student;
 
-import com.coolway.controller.common.ResponseResult;
-import com.coolway.controller.common.page.PageParam;
+import com.coolway.common.ResponseResult;
+import com.coolway.common.page.PageParam;
 import com.coolway.entity.Student;
 import com.coolway.mapper.student.StudentDO;
 import com.coolway.service.student.IStudentService;

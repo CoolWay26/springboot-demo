@@ -1,4 +1,4 @@
-package com.coolway.controller.config;
+package com.coolway.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;

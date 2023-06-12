@@ -1,4 +1,4 @@
-package com.coolway.controller.config;
+package com.coolway.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;

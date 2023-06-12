@@ -1,4 +1,4 @@
-package com.coolway.controller.common.utils;
+package com.coolway.common.utils;
 
 
 import java.io.ByteArrayInputStream;
@@ -17,7 +17,6 @@ import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.SortingParams;
-import redis.clients.jedis.exceptions.JedisDataException;
 
 @Component
 @Slf4j

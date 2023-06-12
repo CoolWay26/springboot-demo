@@ -1,4 +1,4 @@
-//package com.coolway.controller.config;
+//package com.coolway.config;
 //
 //import com.coolway.controller.student.StudentVO;
 //import lombok.AllArgsConstructor;

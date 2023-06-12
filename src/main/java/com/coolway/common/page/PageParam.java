@@ -1,4 +1,4 @@
-package com.coolway.controller.common.page;
+package com.coolway.common.page;
 
 import com.github.pagehelper.IPage;
 import lombok.Data;

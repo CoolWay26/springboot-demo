@@ -1,4 +1,4 @@
-package com.coolway.controller.common.quartzjob;
+package com.coolway.common.quartzjob;
 
 import java.util.Date;
 import java.util.TimerTask;

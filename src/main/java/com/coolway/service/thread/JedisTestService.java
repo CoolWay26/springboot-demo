@@ -1,7 +1,6 @@
 package com.coolway.service.thread;
 
-import com.coolway.controller.common.utils.RedisUtil;
-import io.swagger.annotations.Api;
+import com.coolway.common.utils.RedisUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;

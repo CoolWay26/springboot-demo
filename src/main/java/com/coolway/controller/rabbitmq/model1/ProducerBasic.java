@@ -1,6 +1,6 @@
 package com.coolway.controller.rabbitmq.model1;
 
-import com.coolway.controller.common.utils.RabbitMQUtil;
+import com.coolway.common.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 

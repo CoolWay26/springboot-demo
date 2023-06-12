@@ -1,4 +1,4 @@
-package com.coolway.controller.common.quartzjob;
+package com.coolway.common.quartzjob;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

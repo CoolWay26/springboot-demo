@@ -1,6 +1,6 @@
 package com.coolway.service.student;
 
-import com.coolway.controller.common.page.PageService;
+import com.coolway.common.page.PageService;
 import com.coolway.entity.Student;
 import com.coolway.mapper.student.StudentDO;
 

@@ -1,4 +1,4 @@
-package com.coolway.controller.config;
+package com.coolway.config;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;

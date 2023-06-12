@@ -1,6 +1,6 @@
-package com.coolway.controller.common.global;
+package com.coolway.common.global;
 
-import com.coolway.controller.common.ResponseResult;
+import com.coolway.common.ResponseResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

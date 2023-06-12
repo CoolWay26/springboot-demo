@@ -1,4 +1,4 @@
-package com.coolway.controller.common;
+package com.coolway.common;
 
 import java.io.Serializable;
 

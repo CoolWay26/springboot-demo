@@ -1,6 +1,6 @@
-package com.coolway.controller.config;
+package com.coolway.config;
 
-import com.coolway.controller.common.quartzjob.DemoQuartzTask2;
+import com.coolway.common.quartzjob.DemoQuartzTask2;
 import org.quartz.JobDataMap;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
