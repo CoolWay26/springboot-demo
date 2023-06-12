@@ -1,4 +1,4 @@
-package com.coolway.controller.common.utils;
+package com.coolway.common.utils;
 
 import com.alibaba.excel.EasyExcelFactory;
 import com.alibaba.excel.ExcelWriter;
